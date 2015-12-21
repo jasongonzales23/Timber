@@ -6,6 +6,11 @@
   More info on global variables (available on all templates):
     - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
+<p>
+{% for product in collections.main-product.products %}
+  {{product.title}}
+{% endfor %}
+</p>
 
 <h2>{{ 'homepage.sections.frontpage_title' | t }}</h2>
 
