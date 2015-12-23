@@ -144,10 +144,10 @@ $zindexDrawer: 10;
 
 /*================ Typography ================*/
 
-$headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerFontWeight: 700;
+$headerFontStack: 'Source Sans Pro', sans-serif;
+$headerFontWeight: 600;
 
-$bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$bodyFontStack: 'Source Sans Pro', sans-serif;
 $baseFontSize: 14px; // Henseforth known as 1em
 
 @font-face {
@@ -1781,7 +1781,7 @@ label.error {
 .site-header__logo {
   text-align: center;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 90px;
 
   @include at-query ($min, $large) {
     text-align: left;
@@ -1809,6 +1809,19 @@ label.error {
 
 .site-header__cart-toggle {
   display: inline-block;
+  padding: 5px 7px;
+  background-color: #f7941d;
+  border-radius: $radius;
+  img {
+    max-width: 24px;
+    vertical-align: text-bottom;
+  }
+}
+
+#CartCount {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1em;
 }
 
 .site-header__search {
@@ -2545,7 +2558,7 @@ label.error {
   display: inline-block;
   padding: 5px 7px;
   border: 1px solid #C1C1C1;
-  border-radius: 4px;
+  border-radius: $radius;
   margin-left: 11px;
 }
 

@@ -27,6 +27,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
+  <!-- FONTS =============================================== -->
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
+
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
 
@@ -90,11 +93,8 @@
             {% endcomment %}
             <div>
               <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-                <span class="icon icon-cart" aria-hidden="true"></span>
-                {{ 'layout.cart.title' | t }}
-                (<span id="CartCount">{{ cart.item_count }}</span>
-                {{ 'layout.cart.items_count' | t: count: cart.item_count }}
-                <span id="CartCost">{{ cart.total_price | money }}</span>)
+                <img src="{{ 'store_icon_cart@3x.png' | asset_url }}"/>
+                <span id="CartCount">{{ cart.item_count }}</span>
               </a>
               <a href="#outside-us" class="outside-us">Not in the U.S.A.?</a>
             </div>
