@@ -1,0 +1,16 @@
+<div>
+  <ul class="tabs">
+    <li><a href="#tab-1">Compatibility</a></li>
+    <li><a href="#tab-2">Tech Specs</a></li>
+    <li><a href="#tab-3">Reviews</a></li>
+  </ul>
+  <div id="tab-1">
+    {% include 'compatibility' %}
+  </div>
+  <div id="tab-2">
+    {% include 'tech-specs' %}
+  </div>
+  <div id="tab-3">
+    {% include 'reviews' product=product %}
+  </div>
+</div>
