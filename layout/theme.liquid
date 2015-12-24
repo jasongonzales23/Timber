@@ -94,7 +94,9 @@
             <div>
               <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
                 <img src="{{ 'store_icon_cart@3x.png' | asset_url }}"/>
-                <span id="CartCount">{{ cart.item_count }}</span>
+                {% if cart.item_count > 0 %}
+                  <span id="CartCount">{{ cart.item_count }}</span>
+                {% endif %}
               </a>
               <a href="#outside-us" class="outside-us">Not in the U.S.A.?</a>
             </div>
@@ -129,14 +131,14 @@
         <h1 class="text-center">AliveCor Store</h1>
       </div>
       <div class="cool-stuff text-center">
-        <span>30-day money back guarantee</span>
-        <span>1-year warranty</span>
+        <span class="cool-thing">30-day money back guarantee</span>
+        <span class="cool-thing">1-year warranty</span>
       </div>
       <div class="wrapper">
         <nav class="fake-nav">
           <ul>
             <li class="active">
-              <a href="#main-product">AliveCor Mobile ECG</a>
+              <a href="#main-product">AliveCor ECG</a>
             </li>
             <li>
               <a href="#accessories">Accessories</a>

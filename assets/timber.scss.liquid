@@ -1076,7 +1076,7 @@ button {
 
 button[disabled],
 html input[disabled] {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .btn,
@@ -1763,7 +1763,8 @@ label.error {
   #Site Header
 ==============================================================================*/
 .site-header {
-  padding: ($gutter / 2) 0;
+  padding: 15px 0 0 0;
+  background: #f4f4f4;
 
   .grid--table {
     display: table;
@@ -1781,7 +1782,7 @@ label.error {
 .site-header__logo {
   text-align: center;
   margin: 0 auto;
-  max-width: 90px;
+  max-width: 100px;
 
   @include at-query ($min, $large) {
     text-align: left;
@@ -2556,10 +2557,17 @@ label.error {
 
 .outside-us {
   display: inline-block;
-  padding: 5px 7px;
-  border: 1px solid #C1C1C1;
-  border-radius: $radius;
+  padding: 7px;
+  border: 1px solid #777;
+  border-radius: 3px;
   margin-left: 11px;
+  color: #777;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  &:hover {
+    color: #000;
+  }
 }
 
 .fake-nav {
@@ -2569,6 +2577,7 @@ label.error {
     margin: 0;
     li {
       display: inline-block;
+      margin: 0 15px;
       &.active {
         position: relative;
         &:after {
@@ -2582,11 +2591,57 @@ label.error {
       }
       a {
         text-transform: uppercase;
+        padding: 5px;
+        font-size: 18px;
+        font-weight: 600;
       }
     }
   }
 }
 
-.site-header {
-  background: #F1F1F1;
+.site-title {
+  h1 {
+    font-size: 48px;
+    font-weight: 300;
+  }
+}
+
+.cool-stuff {
+  .cool-thing {
+    margin: 0 25px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+.product-pre-title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.product-title {
+  margin: 0;
+}
+
+.product-description {
+  clear: both;
+  font-size: 18px;
+}
+
+.form-control {
+  font-size: 18px;
+  &.out-of-stock {
+    font-style: italic;
+    cursor: not-allowed;
+  }
+}
+
+#ProductPrice {
+  float: left;
+  font-weight: 400;
+  margin-right: 20px;
+}
+
+.spr-badge {
+  margin-top: 20px;
 }
