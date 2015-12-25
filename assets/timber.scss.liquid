@@ -148,7 +148,7 @@ $headerFontStack: 'Source Sans Pro', sans-serif;
 $headerFontWeight: 600;
 
 $bodyFontStack: 'Source Sans Pro', sans-serif;
-$baseFontSize: 14px; // Henseforth known as 1em
+$baseFontSize: 18px; // Henseforth known as 1em
 
 @font-face {
   font-family: 'icons';
@@ -788,7 +788,7 @@ select {
   line-height: 1.6;
   font-family: $bodyFontStack;
   color: $colorTextBody;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
@@ -808,19 +808,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /*================ Use em() Sass function to declare font-size ================*/
 h1 {
-  font-size: em(36px);
+  font-size: em(48px);
 }
 
 h2 {
-  font-size: em(28px);
+  font-size: em(36px);
 }
 
 h3 {
-  font-size: em(22px);
+  font-size: em(24px);
 }
 
 h4 {
-  font-size: em(20px);
+  font-size: em(18px);
 }
 
 h5 {
@@ -2209,6 +2209,7 @@ label.error {
 .grid__image {
   display: block;
   margin: 0 auto ($gutter / 2);
+  border: 1px solid #ccc;
 
   img {
     display: block;
@@ -2570,7 +2571,7 @@ label.error {
   }
 }
 
-.fake-nav {
+.fake-nav, .product-tabs {
   text-align: center;
   ul {
     list-style: none;
@@ -2590,9 +2591,20 @@ label.error {
         }
       }
       a {
-        text-transform: uppercase;
-        padding: 5px;
+        display: block;
+        padding: 6px;
         font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.fake-nav {
+  ul {
+    li {
+      a  {
+        text-transform: uppercase;
         font-weight: 600;
       }
     }
@@ -2625,7 +2637,12 @@ label.error {
 
 .product-description {
   clear: both;
-  font-size: 18px;
+  font-size: em(18px);
+  font-weight: 400;
+  margin-bottom: em(30px);
+  ul {
+    margin-bottom: 0;
+  }
 }
 
 .form-control {
@@ -2644,4 +2661,45 @@ label.error {
 
 .spr-badge {
   margin-top: 20px;
+}
+
+.product-single__photos, .product-single__thumbnail {
+  border: 1px solid #ccc;
+}
+
+.targets {
+  background: #f9f9f9;
+  padding: 40px 18px;
+  p {
+    font-weight: 400;
+  }
+}
+
+.target {
+  display: none;
+  &.selected {
+    display: block;
+  }
+}
+
+.compatibility-list {
+  list-style: none;
+  margin: 4px 0 24px 0;
+  font-size: em(18px);
+}
+
+.itunes-badge img {
+  height: 44px;
+}
+
+.section {
+  margin-top: 24px;
+}
+
+.accessory {
+  text-align: center;
+}
+
+.spr-container {
+  border: none !important;
 }

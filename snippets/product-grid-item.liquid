@@ -37,7 +37,7 @@
   {% assign sold_out = false %}
 {% endif %}
 
-<div class="grid__item {{ grid_item_width }}">
+<div class="grid__item {{ grid_item_width }} accessory">
 
   {% comment %}
     Link to your product with the 'within: collection' filter for the link to be aware of the collection.
@@ -55,7 +55,7 @@
     <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
   </div>
 
-  <p class="h6">
+  <p class="h4">
     {{ product.title }}
   </p>
   <p>
@@ -78,6 +78,7 @@
       {% else %}
         {{ product.price | money }}
       {% endif %}
+
       <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
 
         {% comment %}
@@ -101,6 +102,10 @@
             {% endfor %}
           </select>
           <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+        </div>
+
+        <div class="product-description rte" itemprop="description">
+          {{product.description}}
         </div>
 
         <button type="submit" name="add" id="AddToCart" class="btn">
