@@ -70,7 +70,7 @@
               <div class="h1 site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
             {% endif %}
               {% if settings.logo_use_image %}
-                <a href="/" itemprop="url" class="site-header__logo-link">
+                <a href="http://alivecor.com" itemprop="url" class="site-header__logo-link">
                   <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
                 </a>
               {% else %}
@@ -94,9 +94,13 @@
             <div>
               <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
                 <img src="{{ 'store_icon_cart@3x.png' | asset_url }}"/>
-                {% if cart.item_count > 0 %}
-                  <span id="CartCount">{{ cart.item_count }}</span>
-                {% endif %}
+                  <span id="CartCount">
+                    {% if cart.item_count > 0 %}
+                      {{ cart.item_count }}
+                    {% else %}
+                      &nbsp;
+                    {% endif %}
+                  </span>
               </a>
               <a href="#outside-us" class="outside-us">Not in the U.S.A.?</a>
             </div>
@@ -128,7 +132,11 @@
 
       </div>
       <div class="site-title">
-        <h1 class="text-center">AliveCor Store</h1>
+        <h1 class="text-center">
+          <a href="/">
+            AliveCor Store
+          </a>
+        </h1>
       </div>
       <div class="cool-stuff text-center">
         <span class="cool-thing">30-day money back guarantee</span>
@@ -222,11 +230,45 @@
 
     <!-- begin site-footer -->
     <footer class="site-footer small--text-center" role="contentinfo">
+      <a name="outside-us"></a>
       <div class="wrapper">
         <div class="grid">
 
+          <div class="grid__item large--one-half international-links">
+            <h4>Not in the U.S.?</h4>
+            <p>AliveCor is available in the following countries</p>
+            <p>
+              <a href="http://www.alivetec.com/store/">Australia</a> |
+              <a href="http://www.amazon.ca/s/ref=bl_dp_s_web_6205177011?ie=UTF8&amp;field-brandtextbin=AliveCor&amp;node=6205177011">Canada</a> |
+              <a href="http://hng.co.in:9022/cor/ProductQuantity.aspx">India</a> |
+              <a href="http://www.amazon.co.uk/gp/browse.html?ie=UTF8&amp;marketplaceID=A1F83G8C2ARO7P&amp;me=A3CHKKV5Z0PAQD">Ireland</a> |
+              <a href="http://www.amazon.co.uk/gp/browse.html?ie=UTF8&amp;marketplaceID=A1F83G8C2ARO7P&amp;me=A3CHKKV5Z0PAQD">United Kingdom</a>
+            </p>
+
+            <h5>Don't see your location?</h5>
+            <p><a href="http://www.alivecor.com/home#newsletter-signup">Sign up</a> for our newsletter to hear when we add new countries.</p>
+          </div>
+
+          <div class="grid__item large--one-half">
+            <h4>Need help or have questions?</h4>
+            <p>Our customer support team is happy to help.</p>
+            <p>Email us at <a href="mailto:support@alivecor.com">support@alivecor.com</a> </p>
+
+            <p>
+              Call us at 1-855-338-8800<br>
+              Monday through Friday<br>
+              7AM to 4PM Pacific Time
+            </p>
+          </div>
+
         </div>
       </div>
+
+      <div class="wrapper disclaimer">
+        <span>All rights reserved AliveCor</span>
+        <a href="http://www.alivecor.com/warranty">Limited Warranty and Returns Policy</a>
+      </div>
+
     </footer>
     <!-- //site-footer -->
   </div>

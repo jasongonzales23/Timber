@@ -78,7 +78,11 @@
                          id="{{variant.id}}"
                          name="id"
                          data-sku="{{variant.sku}}"
-                         value="{{variant.id}}">
+                         value="{{variant.id}}"
+                         {% if forloop.first == true %}
+                           checked="true"
+                         {% endif %}
+                         >
                   <b>{{variant.title}}</b>
                   {% if add_price > 0 %}
                   &nbsp;(add {{ add_price | money_with_currency }})

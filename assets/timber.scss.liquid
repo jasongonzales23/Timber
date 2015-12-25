@@ -1813,6 +1813,7 @@ label.error {
   padding: 5px 7px;
   background-color: #f7941d;
   border-radius: $radius;
+  line-height: 1.2em;
   img {
     max-width: 24px;
     vertical-align: text-bottom;
@@ -1821,7 +1822,6 @@ label.error {
 
 #CartCount {
   color: #fff;
-  font-size: 16px;
   line-height: 1em;
 }
 
@@ -2646,7 +2646,6 @@ label.error {
 }
 
 .form-control {
-  font-size: 18px;
   &.out-of-stock {
     font-style: italic;
     cursor: not-allowed;
@@ -2657,6 +2656,10 @@ label.error {
   float: left;
   font-weight: 400;
   margin-right: 20px;
+}
+
+#AddToCart {
+  padding: 8px 96px;
 }
 
 .spr-badge {
@@ -2702,4 +2705,33 @@ label.error {
 
 .spr-container {
   border: none !important;
+}
+
+.international-links {
+  a {
+    margin: 0 8px;
+    &:nth-of-type(1) {
+      margin-left: 0;
+    }
+  }
+}
+
+.site-footer {
+  p {
+    font-size: em(16px);
+  }
+  h4, h5 {
+    margin: 0;
+  }
+}
+
+.disclaimer {
+  font-size: em(12px);
+  margin-top: 48px;
+}
+
+.site-title {
+  a {
+    color: inherit;
+  }
 }
