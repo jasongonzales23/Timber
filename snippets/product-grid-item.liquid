@@ -104,9 +104,11 @@
           <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
         </div>
 
-        <div class="product-description rte" itemprop="description">
-          {{product.description}}
-        </div>
+        {% unless no_description %}
+          <div class="product-description rte" itemprop="description">
+            {{product.description}}
+          </div>
+        {% endunless %}
 
         <button type="submit" name="add" id="{{product.id}}" class="btn">
           <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>

@@ -1,0 +1,7 @@
+<h3>Recommended Accessories</h3>
+
+<div class="recommended-accessories">
+  {% for product in collections.recommended-accessories.products limit:2 %}
+    {% include 'product-grid-item', no_description: true %}
+  {% endfor %}
+</div>
