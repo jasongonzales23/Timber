@@ -72,13 +72,15 @@
           {% for variant in product.variants %}
             {% if variant.available %}
               {% assign add_price = variant.price | minus: product.price %}
-              <div>
+              <div class="variant-input-wrapper">
                 <label for="{{variant.id}}" class="form-control">
                   <input type="radio"
                          id="{{variant.id}}"
                          name="id"
                          data-sku="{{variant.sku}}"
                          value="{{variant.id}}"
+                         class="variant-input"
+                         data-index="{{forloop.index0}}"
                          {% if forloop.first == true %}
                            checked="true"
                          {% endif %}
@@ -90,7 +92,7 @@
                 </label>
               </div>
             {% else %}
-              <div>
+              <div class="variant-input-wrapper">
                 <label class="form-control out-of-stock">
                   <input type="radio"
                          disabled>
@@ -145,3 +147,10 @@
 <div class="grid-uniform">
   {% include 'product-tabs' product=product%}
 </div>
+
+<script>
+$('form').on('click', "input", function(e) {
+  var idx = $(this).data('index');
+  $('.product-single__thumbnails').find('a').eq(idx).click();
+});
+</script>

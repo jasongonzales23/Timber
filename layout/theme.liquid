@@ -142,18 +142,21 @@
         <span class="cool-thing">30-day money back guarantee</span>
         <span class="cool-thing">1-year warranty</span>
       </div>
-      <div class="wrapper">
-        <nav class="fake-nav">
-          <ul>
-            <li class="active">
-              <a href="#main-product">AliveCor ECG</a>
-            </li>
-            <li>
-              <a href="#accessories">Accessories</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+
+      {% if template == 'index' %}
+        <div class="wrapper">
+          <nav class="fake-nav">
+            <ul>
+              <li class="active">
+                <a href="#main-product">AliveCor ECG</a>
+              </li>
+              <li>
+                <a href="#accessories">Accessories</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      {% endif %}
     </header>
 
     <nav class="nav-bar" role="navigation">
