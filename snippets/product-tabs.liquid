@@ -1,9 +1,10 @@
 <div class="wrapper">
+  <a name="tabs"/>
   <nav class="product-tabs">
     <ul>
       <li class="active tab" ><a href="#tab-1" data-target="#tab-1">Compatibility</a></li>
       <li class="tab"><a href="#tab-2" data-target="#tab-2">Tech Specs</a></li>
-      <li class="tab"><a href="#tab-3" data-target="#tab-3">Reviews</a></li>
+      <li class="tab"><a id="reviews" href="#tab-3" data-target="#tab-3">Reviews</a></li>
     </ul>
   </nav>
   <div class="targets clearfix">
@@ -19,7 +20,13 @@
   </div>
 </div>
 <script>
+  function scrollToAnchor(anchorId) {
+    var aTag = $("a[name='"+ anchorId +"']");
+    $('html, body').animate({scrollTop: aTag.offset().top});
+  }
+
   jQuery(function($) {
+
     $('.tab').on('click', function(e) {
       e.preventDefault();
       var target = $(e.target).data('target');
@@ -28,5 +35,23 @@
       $('.tab').removeClass('active');
       $(e.target).parent('li').addClass('active');
     });
+
+    //hash will be "#review-tabs"
+    var hash = window.location.hash
+    var split = hash.split('-')
+    if (split.length === 2) {
+      $(split[0]).click();
+      scrollToAnchor('tabs');
+    }
+
+    $('.scroll-to-tab').on('click', function(e) {
+      var hash = e.currentTarget.hash
+      var split = hash.split('-')
+      if (split.length === 2) {
+        $(split[0]).click();
+        scrollToAnchor('tabs');
+      }
+    })
+
   });
 </script>

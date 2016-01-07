@@ -55,7 +55,9 @@
       </span>
 
       <!-- Star rating ======================================================== -->
-      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+      <a href="#reviews-tabs" class="scroll-to-tab">
+        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+      </a>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">
@@ -87,7 +89,7 @@
                          >
                   <b>{{variant.title}}</b>
                   {% if add_price > 0 %}
-                  &nbsp;(add {{ add_price | money_with_currency }})
+                  &nbsp;(add {{add_price | money_with_currency}})
                   {% endif %}
                 </label>
               </div>

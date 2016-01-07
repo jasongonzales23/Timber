@@ -139,7 +139,7 @@
         </h1>
       </div>
       <div class="cool-stuff text-center">
-        <span class="cool-thing">30-day money back guarantee</span>
+        <span class="cool-thing">14-day money back guarantee</span>
         <span class="cool-thing">1-year warranty</span>
       </div>
 
@@ -248,9 +248,36 @@
               <a href="http://www.amazon.co.uk/gp/browse.html?ie=UTF8&amp;marketplaceID=A1F83G8C2ARO7P&amp;me=A3CHKKV5Z0PAQD">United Kingdom</a>
             </p>
 
-            <h5>Don't see your location?</h5>
-            <p><a href="http://www.alivecor.com/home#newsletter-signup">Sign up</a> for our newsletter to hear when we add new countries.</p>
+            <h5>Keep your finger on the pulse.</h5>
+            <p>Sign up for the latest AliveCor news.</p>
+            {% if settings.footer_newsletter_enable %}
+              <div class="grid__item large--two-thirds medium--two-thirds small--one-whole newsletter-signup">
+                {% comment %}
+                  MailChimp is the go-to newsletter service for Shopify.
+                  Use the link below to find your MailChimp form action
+                  and insert it in your site settings.
+
+                  MailChimp newsletter integration and requirement:
+                   - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
+                {% endcomment %}
+                {% if settings.newsletter_form_action != blank %}
+                  {% assign form_action = settings.newsletter_form_action %}
+                {% else %}
+                  {% assign form_action = '#' %}
+                {% endif %}
+                <form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+                  <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+                  <span class="input-group-btn">
+                    <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+                  </span>
+                </form>
+              </div>
+            {% endif %}
           </div>
+
+
+
+
 
           <div class="grid__item large--one-half">
             <h4>Need help or have questions?</h4>

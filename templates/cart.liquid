@@ -89,10 +89,7 @@
       </tbody>
     </table>
     <div class="grid cart__row">
-      <div class="grid__item two-thirds small--one-whole">
-        {% include 'recommended-accessories' %}
-      </div>
-      <div class="grid__item one-third text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
+      <div class="grid__item one-whole text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
         <p>
           <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
           <span class="h3 cart__subtotal">{{ cart.total_price | money }}</span>
@@ -103,6 +100,9 @@
       </div>
     </div>
   </form>
+  <div class="one-half small--one-whole recommended-accessories">
+    {% include 'recommended-accessories' %}
+  </div>
 {% else %}
   {% comment %}
     The cart is empty
