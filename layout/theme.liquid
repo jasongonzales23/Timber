@@ -82,7 +82,7 @@
               </div>
             {% endif %}
           </div>
-          <div class="grid__item large--one-half large--text-right medium-down--hide">
+          <div class="grid__item large--one-half large--text-right">
             {% comment %}
               Show number of items in the cart and total cost in the /cart link
 
@@ -91,18 +91,16 @@
                 - #cartCost updates the total cost of the cart
                 - Documentation:  http://shopify.com/timber#ajax-cart
             {% endcomment %}
-            <div>
+            <div class="cart-wrapper">
               <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
                 <img src="{{ 'store_icon_cart@3x.png' | asset_url }}"/>
                   <span id="CartCount">
                     {% if cart.item_count > 0 %}
                       {{ cart.item_count }}
-                    {% else %}
-                      &nbsp;
                     {% endif %}
                   </span>
               </a>
-              <a href="#outside-us" class="outside-us">Not in the U.S.A.?</a>
+              <a href="#outside-us" class="outside-us medium-down--hide">Not in the U.S.A.?</a>
             </div>
 
             {% comment %}
@@ -139,8 +137,14 @@
         </h1>
       </div>
       <div class="cool-stuff text-center">
-        <span class="cool-thing">14-day money back guarantee</span>
-        <span class="cool-thing">1-year warranty</span>
+        <span class="cool-thing">
+          <img src="{{ 'icon_checkmark_sm@2x.png' | asset_url }}">
+          14-day money back guarantee
+        </span>
+        <span class="cool-thing">
+          <img src="{{ 'icon_checkmark_sm@2x.png' | asset_url }}">
+          1-year warranty
+        </span>
       </div>
 
       {% if template == 'index' %}
@@ -148,7 +152,7 @@
           <nav class="fake-nav">
             <ul>
               <li class="active">
-                <a href="#main-product">AliveCor ECG</a>
+                <a href="#main-product">AliveCor Mobile ECG</a>
               </li>
               <li>
                 <a href="#accessories">Accessories</a>
@@ -158,72 +162,6 @@
         </div>
       {% endif %}
     </header>
-
-    <nav class="nav-bar" role="navigation">
-      <div class="wrapper">
-        <div class="medium-down--hide">
-          {% comment %}
-            List out your main-menu linklist (default)
-
-            More info on linklists:
-              - http://docs.shopify.com/themes/liquid-variables/linklists
-          {% endcomment %}
-          <!-- begin site-nav -->
-          <ul class="site-nav" id="AccessibleNav">
-            {% for link in linklists.main-menu.links %}
-              {% comment %}
-                Create a dropdown menu by naming a linklist the same as a link in the parent nav
-
-                More info on dropdowns:
-                  - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
-              {% endcomment %}
-              {% assign child_list_handle = link.title | handleize %}
-              {% if linklists[child_list_handle].links != blank %}
-                <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
-                  <a href="{{ link.url }}" class="site-nav__link">
-                    {{ link.title }}
-                    <span class="icon icon-arrow-down" aria-hidden="true"></span>
-                  </a>
-                  <ul class="site-nav__dropdown">
-                    {% for childlink in linklists[child_list_handle].links %}
-                      <li{% if childlink.active %} class="site-nav--active"{% endif %}>
-                        <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </li>
-              {% else %}
-                <li {% if link.active %}class="site-nav--active"{% endif %}>
-                  <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-          <!-- //site-nav -->
-        </div>
-        <div class="large--hide medium-down--show">
-          <div class="grid">
-            <div class="grid__item one-half">
-              <div class="site-nav--mobile">
-                <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
-                  <span class="fallback-text">{{ 'layout.navigation.menu' | t }}</span>
-                </button>
-              </div>
-            </div>
-            <div class="grid__item one-half text-right">
-              <div class="site-nav--mobile">
-                <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
-                  <span class="icon-fallback-text">
-                    <span class="icon icon-cart" aria-hidden="true"></span>
-                    <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
 
     <main class="wrapper main-content" role="main">
 
@@ -248,8 +186,8 @@
               <a href="http://www.amazon.co.uk/gp/browse.html?ie=UTF8&amp;marketplaceID=A1F83G8C2ARO7P&amp;me=A3CHKKV5Z0PAQD">United Kingdom</a>
             </p>
 
-            <h5>Keep your finger on the pulse.</h5>
-            <p>Sign up for the latest AliveCor news.</p>
+            <h5>Don't see your location?</h5>
+            <p>Sign up for our newsletter to hear when we add new countries.</p>
             {% if settings.footer_newsletter_enable %}
               <div class="grid__item large--two-thirds medium--two-thirds small--one-whole newsletter-signup">
                 {% comment %}

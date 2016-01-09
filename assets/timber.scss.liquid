@@ -2263,6 +2263,7 @@ label.error {
   a, img {
     display: block;
     margin: 0 auto;
+    width: 100%;
   }
 
   li {
@@ -2616,14 +2617,27 @@ label.error {
   h1 {
     font-size: 48px;
     font-weight: 300;
+    margin-bottom: 7px;
   }
 }
 
 .cool-stuff {
+  margin-bottom: 25px;
   .cool-thing {
     margin: 0 25px;
     font-size: 18px;
     font-weight: 400;
+    display: block;
+    margin-bottom: 20px;
+    @include at-query ($min, $medium) {
+      display: inline-block;
+      margin: 0 25px;
+    }
+    img {
+      max-width: 24px;
+      margin-right: 3px;
+      margin-bottom: -7px;
+    }
   }
 }
 
@@ -2759,4 +2773,19 @@ label.error {
 
 .newsletter-signup {
   padding: 0;
+}
+
+.cart-wrapper {
+  float: right;
+  margin-right: 30px;
+  @include at-query($min, $large) {
+    float: none;
+    margin-right: 0;
+  }
+}
+
+.cart-item-quantity {
+  max-width: 48px;
+  padding: 8px 0px 8px 12px;
+  text-align: center;
 }
