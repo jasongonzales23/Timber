@@ -2404,6 +2404,11 @@ label.error {
   display: inline;
 }
 
+.cart__subtotal-title {
+  font-size: em(24px);
+  margin-right: 120px;
+}
+
 .cart__mini-labels {
   display: block;
   margin: ($gutter / 3) 0;
@@ -2727,7 +2732,7 @@ label.error {
 }
 @include at-query($min, $medium) {
   .recommended-accessories {
-    margin-top: -140px;
+    margin-top: -320px;
   }
 }
 
@@ -2784,8 +2789,29 @@ label.error {
   }
 }
 
+.cart-product {
+  border: 1px solid #ccc;
+}
+
 .cart-item-quantity {
   max-width: 48px;
   padding: 8px 0px 8px 12px;
   text-align: center;
+}
+
+.update-cart, .continue-shopping {
+  font-size: 16px;
+  background: #fff;
+  color: #535353;
+  border: 1px solid #bbb;
+  margin-bottom: 20px;
+}
+
+.continue-shopping {
+  margin-right: 60px;
+}
+
+.checkout-btn {
+  font-size: em(24px);
+  padding: 15px 95px;
 }

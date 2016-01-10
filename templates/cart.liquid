@@ -9,7 +9,7 @@
 
 {% if cart.item_count > 0 %}
 
-  <h1>{{ 'cart.general.title' | t }}</h1>
+  <h2>{{ 'cart.general.title' | t }}</h2>
   <form action="/cart" method="post" novalidate class="cart table-wrap">
     <table class="cart-table full table--responsive">
       <thead class="cart__row cart__header-labels">
@@ -26,7 +26,7 @@
                 More image size options at:
                   - http://docs.shopify.com/themes/filters/product-img-url
               {% endcomment %}
-              <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+              <img class="cart-product" src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
             </td>
             <td>
               <h4>
@@ -90,13 +90,18 @@
     </table>
     <div class="grid cart__row">
       <div class="grid__item one-whole text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
+        <input type="submit" name="update" class="btn--secondary update-cart" value="{{ 'cart.general.update' | t }}">
         <p>
           <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
           <span class="h3 cart__subtotal">{{ cart.total_price | money }}</span>
         </p>
         <p><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
-        <input type="submit" name="update" class="btn--secondary update-cart" value="{{ 'cart.general.update' | t }}">
-        <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
+        <p>
+          <input type="submit" name="checkout" class="btn checkout-btn" value="{{ 'cart.general.checkout' | t }}">
+        </p>
+        <p>
+          <a href="/" class="btn continue-shopping">Continue Shopping</a>
+        </p>
       </div>
     </div>
   </form>
