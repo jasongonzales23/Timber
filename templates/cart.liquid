@@ -109,5 +109,9 @@
   {% endcomment %}
   <h2>{{ 'cart.general.title' | t }}</h2>
   <p>{{ 'cart.general.empty' | t }}</p>
-  <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+  <p>
+    <a href="/" class="btn back-to-store">
+      {{ 'cart.general.continue_browsing_html' | t }}
+    </a>
+  </p>
 {% endif %}
