@@ -102,7 +102,7 @@
                     {% endif %}
                   </span>
               </a>
-              <a href="#outside-us" class="outside-us">Not in the U.S.A.?</a>
+              <a href="#outside-us" class="outside-us">Not in the {{shop.address.country}}?</a>
             </div>
 
             {% comment %}
@@ -238,14 +238,10 @@
         <div class="grid">
 
           <div class="grid__item large--one-half international-links">
-            <h4>Not in the U.S.?</h4>
+            <h4>Not in the {{shop.address.country}}?</h4>
             <p>AliveCor is available in the following countries</p>
-            <p>
-              <a href="http://www.alivetec.com/store/">Australia</a> |
-              <a href="http://www.amazon.ca/s/ref=bl_dp_s_web_6205177011?ie=UTF8&amp;field-brandtextbin=AliveCor&amp;node=6205177011">Canada</a> |
-              <a href="http://hng.co.in:9022/cor/ProductQuantity.aspx">India</a> |
-              <a href="http://www.amazon.co.uk/gp/browse.html?ie=UTF8&amp;marketplaceID=A1F83G8C2ARO7P&amp;me=A3CHKKV5Z0PAQD">Ireland</a> |
-              <a href="http://www.amazon.co.uk/gp/browse.html?ie=UTF8&amp;marketplaceID=A1F83G8C2ARO7P&amp;me=A3CHKKV5Z0PAQD">United Kingdom</a>
+
+            <p class="other-store-list">
             </p>
 
             <h5>Keep your finger on the pulse.</h5>
@@ -275,20 +271,10 @@
             {% endif %}
           </div>
 
-
-
-
-
           <div class="grid__item large--one-half">
             <h4>Need help or have questions?</h4>
             <p>Our customer support team is happy to help.</p>
             <p>Email us at <a href="mailto:support@alivecor.com">support@alivecor.com</a> </p>
-
-            <p>
-              Call us at 1-855-338-8800<br>
-              Monday through Friday<br>
-              7AM to 4PM Pacific Time
-            </p>
           </div>
 
         </div>
@@ -310,6 +296,57 @@
     Template-specific js
   {% endcomment %}
   <script>
+    var storesByLocale = {
+      "AUSTRALIA": {
+        shop: "AUSTRALIA",
+        url: "http://www.alivetec.com/store",
+        fullName: "Australia"
+      },
+      "CANADA": {
+        shop: "CANADA",
+        url: "http://www.amazon.ca/s/ref=bl_dp_s_web_6205177011?ie=UTF8&amp;field-brandtextbin=AliveCor&amp;node=6205177011",
+        fullName: "Canada"
+      },
+      "INDIA": {
+        shop: "INDIA",
+        url: "http://hng.co.in:9022/cor/ProductQuantity.aspx",
+        fullName: "India"
+      },
+      "IRELAND" : {
+        shop: "UNITED KINGDOM",
+        url: "http://www.amazon.co.uk/gp/browse.html?ie=UTF8&amp;marketplaceID=A1F83G8C2ARO7P&amp;me=A3CHKKV5Z0PAQD",
+        fullName: "Ireland"
+      },
+      "UNITED KINGDOM": {
+        shop: "UNITED KINGDOM",
+        url: "http://www.amazon.co.uk/gp/browse.html?ie=UTF8&amp;marketplaceID=A1F83G8C2ARO7P&amp;me=A3CHKKV5Z0PAQD",
+        fullName: "United Kingdom"
+      },
+      "UNITED STATES": {
+        shop: "UNITED STATES",
+        url: "http://shop.alivecor.com",
+        fullName: "United States"
+      }
+    };
+
+    var currentStoreLocale = "{{shop.address.country_upper}}";
+    var storeCount = Object.keys(storesByLocale).length;
+    var i = 0;
+    var storeList = $('.other-store-list');
+
+    for (store in storesByLocale) {
+      i++;
+
+      if (storesByLocale[store].shop != currentStoreLocale) {
+        var storeLink = $("<a href=" + storesByLocale[store].url + ">" + storesByLocale[store].fullName + "</a>");
+        storeList.append(storeLink);
+
+        if (i < storeCount) {
+          storeList.append(" |")
+        }
+      }
+    }
+
     {% if resetPassword %}
       $(function() {
         timber.resetPasswordSuccess();
@@ -336,6 +373,7 @@
           cartCostSelector: '#CartCost',
           moneyFormat: {{ shop.money_format | json }}
         });
+
       });
 
       jQuery('body').on('ajaxCart.afterCartLoad', function(evt, cart) {

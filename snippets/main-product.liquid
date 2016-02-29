@@ -68,8 +68,18 @@
         {{ product.description }}
       </div>
 
+      {% comment %}
+        If there are variants, show the user a variant title
+      {% endcomment %}
+      {% if product.variants.size > 1 %}
       <div class="h3">{{product.options.first | escape}}</div>
+      {% endif %}
+
       <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+        {% if product.variants.size > 1 %}
+        {% comment %}
+          If there are variants, show the user some choices via input controls, else we will hide the inputs
+        {% endcomment %}
 
           {% for variant in product.variants %}
             {% if variant.available %}
@@ -103,6 +113,22 @@
               </div>
             {% endif %}
           {% endfor %}
+
+        {% else %}
+          {% for variant in product.variants %}
+          <input type="hidden"
+                 id="{{variant.id}}"
+                 name="id"
+                 data-sku="{{variant.sku}}"
+                 value="{{variant.id}}"
+                 class="variant-input"
+                 data-index="{{forloop.index0}}"
+                 {% if forloop.first == true %}
+                   checked="true"
+                 {% endif %}
+                 >
+          {% endfor %}
+        {% endif %}
 
         {% comment %}
         <!-- removing quantities for now -->
