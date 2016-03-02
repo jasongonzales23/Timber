@@ -134,7 +134,7 @@
       <div class="site-title">
         <h1 class="text-center">
           <a href="/">
-            AliveCor Store
+            {{ shop.name }}
           </a>
         </h1>
       </div>
@@ -345,6 +345,12 @@
           storeList.append(" |")
         }
       }
+    }
+
+    //if there's a promo banner add a class to the body so we can pad it
+    var promoBannerPresent = $('#simplepromo_container').length > 0;
+    if (promoBannerPresent) {
+      $('body').addClass('promo-banner-present');
     }
 
     {% if resetPassword %}
