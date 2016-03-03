@@ -351,6 +351,10 @@
     var promoBannerPresent = $('#simplepromo_container').length > 0;
     if (promoBannerPresent) {
       $('body').addClass('promo-banner-present');
+      window.setTimeout(function() {
+        $('.shipping-icon').removeClass('hidden');
+        $('.shipping-icon').prependTo('.bar p');
+      }, 500);
     }
 
     {% if resetPassword %}
@@ -389,5 +393,6 @@
     </script>
   {% endif %}
 
+  <img src="{{ 'icon_shipping.png' | asset_url }}" alt="free shipping icon" class="hidden shipping-icon">
 </body>
 </html>
