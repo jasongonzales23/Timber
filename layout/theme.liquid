@@ -138,25 +138,7 @@
           </a>
         </h1>
       </div>
-      <div class="cool-stuff text-center">
-        <span class="cool-thing">14-day money back guarantee</span>
-        <span class="cool-thing">1-year warranty</span>
-      </div>
 
-      {% if template == 'index' %}
-        <div class="wrapper">
-          <nav class="fake-nav">
-            <ul>
-              <li class="active">
-                <a href="#main-product">AliveCor ECG</a>
-              </li>
-              <li>
-                <a href="#accessories">Accessories</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      {% endif %}
     </header>
 
     <nav class="nav-bar" role="navigation">
@@ -226,6 +208,30 @@
     </nav>
 
     <main class="wrapper main-content" role="main">
+      {% if template == 'index' %}
+        <nav class="fake-nav grid">
+          <ul>
+            <li class="grid__item large--one-third">
+              <a href="#kardia-mobile">
+                <img src="{{ 'nav-k-mobile.jpg' | asset_url }}" alt="kardia mobile">
+                Shop Kardia Mobile
+              </a>
+            </li>
+            <li class="grid__item large--one-third">
+              <a href="#kardia-band">
+                <img src="{{ 'nav-k-band.jpg' | asset_url }}" alt="kardia mobile">
+                Shop Kardia Band
+              </a>
+            </li>
+            <li class="grid__item large--one-third">
+              <a href="#accessories">
+                <img src="{{ 'nav-k-accessories.jpg' | asset_url }}" alt="kardia mobile">
+                Shop Kardia Accessories
+              </a>
+            </li>
+          </ul>
+        </nav>
+      {% endif %}
 
       {{ content_for_layout }}
 
