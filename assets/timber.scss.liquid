@@ -84,6 +84,7 @@ $colorSecondary: {{ settings.color_secondary }};
 //Alivecor Colors
 $blue: #00abe5;
 $blue-darker: #0072bc;
+$light-gray: #efefef;
 
 // Button colors
 $colorBtnPrimary: $colorPrimary;
@@ -2743,8 +2744,6 @@ label.error {
 }
 
 .targets {
-  background: #f9f9f9;
-  padding: 40px 18px;
   p {
     font-weight: 400;
   }
@@ -2838,5 +2837,32 @@ label.error {
   margin-right: 10px;
   &.hidden {
     display: none;
+  }
+}
+
+/*=================================
+Accordion Styles
+==================================*/
+.accordion {
+  background-color: $light-gray;
+  position: relative;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  h2 {
+    margin: 0;
+  }
+  .toggler {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 1.875em;
+    line-height: 1em;
+  }
+  .accordion-inner {
+    overflow: auto;
+    &.hidden {
+      display: none;
+    }
   }
 }
