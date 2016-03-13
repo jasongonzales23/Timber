@@ -53,10 +53,17 @@
         {{ product.price | money }}
       </span>
 
+      <!-- cool stuff! ======================================================== -->
+      <h3 class="cool-stuff">14-day money back guarantee<br>
+      1-year warranty</h3>
+
       <!-- Star rating ======================================================== -->
-      <a href="#reviews-tabs" class="scroll-to-tab">
-        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
-      </a>
+      <div class="review-count">
+        <a href="#reviews-tabs" class="scroll-to-tab">
+          <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+          <span class="go-see-em">See all reviews ></a>
+        </a>
+      </div>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">
