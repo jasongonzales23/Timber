@@ -2849,8 +2849,10 @@ Accordion Styles
   padding: 8px 16px;
   margin-bottom: 16px;
   border-radius: 4px;
-  h2 {
+  cursor: pointer;
+  & > h3 {
     margin: 0;
+    color: $blue-darker;
   }
   .toggler {
     position: absolute;
@@ -2858,9 +2860,11 @@ Accordion Styles
     right: 20px;
     font-size: 1.875em;
     line-height: 1em;
+    color: $blue-darker;
   }
   .accordion-inner {
     overflow: auto;
+    margin-top: 16px;
     &.hidden {
       display: none;
     }
