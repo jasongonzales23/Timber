@@ -28,7 +28,7 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
   <!-- FONTS =============================================== -->
-  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
@@ -134,6 +134,7 @@
       <div class="site-title">
         <h1 class="text-center">
           <a href="/">
+            <img src="{{ 'alivecor_studio_iwatch.png' || asset_url }}">
             {{ shop.name }}
           </a>
         </h1>
@@ -211,21 +212,21 @@
       {% if template == 'index' %}
         <nav class="fake-nav grid">
           <ul>
-            <li class="grid__item large--one-third">
+            <li class="grid__item medium--one-third large--one-third">
               <a href="#kardia-mobile">
-                <img src="{{ 'nav-k-mobile.jpg' | asset_url }}" alt="kardia mobile">
+                <img src="{{ 'nav-k-mobile.jpg' | asset_url }}" alt="kardia mobile" class="small--left">
                 Shop Kardia Mobile
               </a>
             </li>
-            <li class="grid__item large--one-third">
+            <li class="grid__item medium--one-third large--one-third">
               <a href="#kardia-band">
-                <img src="{{ 'nav-k-band.jpg' | asset_url }}" alt="kardia mobile">
+                <img src="{{ 'nav-k-band.jpg' | asset_url }}" alt="kardia mobile" class="small--left">
                 Shop Kardia Band
               </a>
             </li>
-            <li class="grid__item large--one-third">
+            <li class="grid__item medium--one-third large--one-third">
               <a href="#accessories">
-                <img src="{{ 'nav-k-accessories.jpg' | asset_url }}" alt="kardia mobile">
+                <img src="{{ 'nav-k-accessories.jpg' | asset_url }}" alt="kardia mobile" class="small--left">
                 Shop Kardia Accessories
               </a>
             </li>
