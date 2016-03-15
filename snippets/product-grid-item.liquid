@@ -110,7 +110,7 @@
           </div>
         {% endunless %}
 
-        <button type="submit" name="add" id="{{product.id}}" class="btn">
+        <button type="submit" name="add" id="{{product.id}}" class="btn" {% if sold_out %}disabled{% endif %}>
           <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
         </button>
       </form>
