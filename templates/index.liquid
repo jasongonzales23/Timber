@@ -10,6 +10,10 @@
   {% include 'main-product' %}
 {% endfor %}
 
+{% for product in collections.products-not-for-sale.products %}
+  {% include 'not-for-sale' %}
+{% endfor %}
+
 {% comment %}
   Use class grid-uniform to have evenly sized columns clear
   each other properly at each breakpoint.
