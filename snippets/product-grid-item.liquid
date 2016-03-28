@@ -37,7 +37,7 @@
   {% assign sold_out = false %}
 {% endif %}
 
-<div class="grid__item {{ grid_item_width }}">
+<div class="grid__item {{ grid_item_width }} accessory">
 
   {% comment %}
     Link to your product with the 'within: collection' filter for the link to be aware of the collection.
@@ -51,12 +51,12 @@
       - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
 
   {% endcomment %}
-  <a href="{{ product.url | within: collection }}" class="grid__image">
+  <div class="grid__image">
     <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-  </a>
+  </div>
 
-  <p class="h6">
-    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+  <p class="h4">
+    {{ product.title }}
   </p>
   <p>
     {% comment %}
@@ -78,6 +78,43 @@
       {% else %}
         {{ product.price | money }}
       {% endif %}
+
+      <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+
+        {% comment %}
+          Note: forcing the variants and quantities to be hidden
+        {% endcomment %}
+        <div class="visually-hidden">
+          <select name="id" id="productSelect" class="product-single__variants">
+            {% for variant in product.variants %}
+              {% if variant.available %}
+
+                {% comment %}
+                  Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+                {% endcomment %}
+                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+              {% else %}
+                <option disabled="disabled">
+                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+        </div>
+
+        {% unless no_description %}
+          <div class="product-description rte" itemprop="description">
+            {{product.description}}
+          </div>
+        {% endunless %}
+
+        <button type="submit" name="add" id="{{product.id}}" class="btn" {% if sold_out %}disabled{% endif %}>
+          <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+        </button>
+      </form>
+
     {% endif %}
     {% if sold_out %}
       <br><strong>{{ 'products.product.sold_out' | t }}</strong>

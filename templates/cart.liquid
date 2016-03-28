@@ -22,18 +22,16 @@
         {% for item in cart.items %}
           <tr class="cart__row table__section">
             <td data-label="{{ 'customer.order.product' | t }}">
-              <a href="{{ item.url | within: collections.all }}" class="cart__image">
-                {% comment %}
-                  More image size options at:
-                    - http://docs.shopify.com/themes/filters/product-img-url
-                {% endcomment %}
-                <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
-              </a>
+              {% comment %}
+                More image size options at:
+                  - http://docs.shopify.com/themes/filters/product-img-url
+              {% endcomment %}
+              <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
             </td>
             <td>
-              <a href="{{ item.url }}" class="h4">
+              <h4>
                 {{ item.product.title }}
-              </a>
+              </h4>
               {% unless item.variant.title contains 'Default' %}
                 <br>
                 <small>{{ item.variant.title }}</small>
@@ -91,13 +89,7 @@
       </tbody>
     </table>
     <div class="grid cart__row">
-      {% if settings.cart_notes_enable %}
-        <div class="grid__item two-thirds small--one-whole">
-          <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-          <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-        </div>
-      {% endif %}
-      <div class="grid__item text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
+      <div class="grid__item one-whole text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
         <p>
           <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
           <span class="h3 cart__subtotal">{{ cart.total_price | money }}</span>
@@ -108,11 +100,18 @@
       </div>
     </div>
   </form>
+  <div class="one-half small--one-whole recommended-accessories">
+    {% include 'recommended-accessories' %}
+  </div>
 {% else %}
   {% comment %}
     The cart is empty
   {% endcomment %}
   <h2>{{ 'cart.general.title' | t }}</h2>
   <p>{{ 'cart.general.empty' | t }}</p>
-  <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+  <p>
+    <a href="/" class="btn back-to-store">
+      {{ 'cart.general.continue_browsing_html' | t }}
+    </a>
+  </p>
 {% endif %}

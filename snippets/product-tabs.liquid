@@ -1,0 +1,81 @@
+<a name="tabs"></a>
+<div class="targets clearfix">
+
+  <a name="compatibility"></a>
+  <div class="accordion">
+    <h3>Compatibility</h3>
+    <a class="toggler">
+      <i class="fa fa-angle-double-right"></i>
+    </a>
+    <div class="accordion-inner hidden">
+      {% include 'compatibility' %}
+    </div>
+  </div>
+
+  <a name="specs"></a>
+  <div class="accordion">
+    <h3>Tech Specs</h3>
+    <a class="toggler">
+      <i class="fa fa-angle-double-right"></i>
+    </a>
+    <div class="accordion-inner hidden">
+      {% include 'tech-specs' %}
+    </div>
+  </div>
+
+  <a name="reviews"></a>
+  <div class="accordion">
+    <h3>Reviews</h3>
+    <a class="toggler">
+      <i class="fa fa-angle-double-right"></i>
+    </a>
+    <div class="accordion-inner hidden">
+      {% include 'reviews' product=product %}
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function scrollToAnchor(anchorId) {
+    var aTag = $("a[name='"+ anchorId +"']");
+    $('html, body').animate({scrollTop: aTag.offset().top});
+  }
+
+  jQuery(function($) {
+
+    $('.tab').on('click', function(e) {
+      e.preventDefault();
+      var target = $(e.target).data('target');
+      $('.target').removeClass('selected');
+      $(target).addClass('selected');
+      $('.tab').removeClass('active');
+      $(e.target).parent('li').addClass('active');
+    });
+
+    //hash will be "#reviews-tabs"
+    var hash = window.location.hash
+    var split = hash.split('-')
+    if (split.length === 2) {
+      $(split[0]).click();
+      scrollToAnchor('tabs');
+    }
+
+    $('.scroll-to-tab').on('click', function(e) {
+      var hash = e.currentTarget.hash
+      var split = hash.split('-')
+      if (split.length === 2) {
+        $(split[0]).click();
+        scrollToAnchor('tabs');
+      }
+    });
+
+    $('.accordion').on('click', function(evt) {
+      var _this = $(this);
+      _this.find('.accordion-inner').slideToggle();
+      _this.find('i').toggleClass('fa-angle-double-right fa-angle-double-down');
+    });
+
+  });
+
+</script>
