@@ -111,8 +111,8 @@ $colorBody: {{ settings.color_body_bg }};
 $colorBorder: {{ settings.color_borders }};
 
 // Nav and dropdown link background
-$colorNav: #f2f2f2;
-$colorNavText: #333;
+$colorNav: #6b6a6a;
+$colorNavText: #fff;
 
 // Site Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
@@ -1915,6 +1915,7 @@ label.error {
   padding: $gutter / 2;
   white-space: nowrap;
   color: $colorNavText;
+  width: 100%;
 
   &:hover,
   &:active,
@@ -2689,7 +2690,7 @@ label.error {
       display: block;
       img {
         width: 95px;
-        @include at-query($min, $medium) {
+        @include at-query($min, $large) {
           width: 195px;
         }
         vertical-align: middle;
@@ -2989,3 +2990,6 @@ Accordion Styles
   }
 }
 
+#mail, #subscribe {
+  max-width: 100%;
+}
