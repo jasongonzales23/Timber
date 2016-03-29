@@ -135,7 +135,7 @@
       <div class="site-title">
         <h1 class="text-center">
           <a href="/">
-            <img src="{{ 'alivecor_studio_iwatch.png' || asset_url }}">
+            <img src="{{ 'alivecor_studio_iwatch.png' || asset_url }}" class="small--hide">
             {{ shop.name }}
           </a>
         </h1>
@@ -199,6 +199,13 @@
                 <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
                   <span class="icon-fallback-text">
                     <span class="icon icon-cart" aria-hidden="true"></span>
+                    <span>
+                      {% if cart.item_count > 0 %}
+                        {{ cart.item_count }}
+                      {% else %}
+                        &nbsp;
+                      {% endif %}
+                    </span>
                     <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
                   </span>
                 </a>
