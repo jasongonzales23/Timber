@@ -2,7 +2,7 @@
 <div class="targets clearfix">
 
   <a name="compatibility"></a>
-  <div class="accordion">
+  <div class="accordion" id="compatibility">
     <h3>Compatibility</h3>
     <a class="toggler">
       <i class="fa fa-angle-double-right"></i>
@@ -13,7 +13,7 @@
   </div>
 
   <a name="specs"></a>
-  <div class="accordion">
+  <div class="accordion" id="specs">
     <h3>Tech Specs</h3>
     <a class="toggler">
       <i class="fa fa-angle-double-right"></i>
@@ -24,7 +24,7 @@
   </div>
 
   <a name="reviews"></a>
-  <div class="accordion">
+  <div class="accordion" id="reviews">
     <h3>Reviews</h3>
     <a class="toggler">
       <i class="fa fa-angle-double-right"></i>
@@ -53,12 +53,13 @@
       $(e.target).parent('li').addClass('active');
     });
 
-    //hash will be "#reviews-tabs"
     var hash = window.location.hash
     var split = hash.split('-')
-    if (split.length === 2) {
-      $(split[0]).click();
+    if (split.length > 0) {
       scrollToAnchor('tabs');
+      window.setTimeout(function() {
+        $(split[0]).click();
+      }, 250);
     }
 
     $('.scroll-to-tab').on('click', function(e) {
