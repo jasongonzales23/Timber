@@ -2,7 +2,7 @@
 <div class="targets clearfix">
 
   <a name="compatibility"></a>
-  <div class="accordion">
+  <div class="accordion" id="compatibility">
     <h3>Compatibility</h3>
     <a class="toggler">
       <i class="fa fa-angle-double-right"></i>
@@ -13,7 +13,7 @@
   </div>
 
   <a name="specs"></a>
-  <div class="accordion">
+  <div class="accordion" id="specs">
     <h3>Tech Specs</h3>
     <a class="toggler">
       <i class="fa fa-angle-double-right"></i>
@@ -24,7 +24,7 @@
   </div>
 
   <a name="reviews"></a>
-  <div class="accordion">
+  <div class="accordion" id="reviews">
     <h3>Reviews</h3>
     <a class="toggler">
       <i class="fa fa-angle-double-right"></i>
@@ -37,13 +37,18 @@
 </div>
 
 <script>
+  var bannerHeight = 62;
+
   function scrollToAnchor(anchorId) {
     var aTag = $("a[name='"+ anchorId +"']");
-    $('html, body').animate({scrollTop: aTag.offset().top});
+    $('html, body').animate({
+      scrollTop: aTag.offset().top - bannerHeight
+    }, 1000);
   }
 
   jQuery(function($) {
 
+    //toggle accordians
     $('.tab').on('click', function(e) {
       e.preventDefault();
       var target = $(e.target).data('target');
@@ -53,21 +58,23 @@
       $(e.target).parent('li').addClass('active');
     });
 
-    //hash will be "#reviews-tabs"
+    //scroll to tabs on page load  if there is a hash
     var hash = window.location.hash
-    var split = hash.split('-')
-    if (split.length === 2) {
-      $(split[0]).click();
-      scrollToAnchor('tabs');
+    if (hash.length > 0) {
+      var split = hash.split('#')
+        window.setTimeout(function() {
+          scrollToAnchor(split[1]);
+          $(hash).click();
+        }, 500);
     }
 
+    //scroll to tabs when you click on this class
     $('.scroll-to-tab').on('click', function(e) {
+      e.preventDefault();
       var hash = e.currentTarget.hash
-      var split = hash.split('-')
-      if (split.length === 2) {
-        $(split[0]).click();
-        scrollToAnchor('tabs');
-      }
+      var split = hash.split('#');
+      scrollToAnchor(split[1]);
+      $(hash).click();
     });
 
     $('.accordion').on('click', function(evt) {
