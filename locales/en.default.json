@@ -366,5 +366,11 @@
     "user_manuals": "User Manuals",
     "ios_user_manual_link": "Kardia Mobile for iOS",
     "android_user_manual_link": "Kardia Mobile for Android"
+  },
+  "main_product": {
+    "guarantee": "14-day money back guarantee",
+    "warranty": "1-year warranty",
+    "see_all_reviews": "See all reviews"
   }
+
 }
