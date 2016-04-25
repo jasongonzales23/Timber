@@ -371,6 +371,11 @@
     "guarantee": "14-day money back guarantee",
     "warranty": "1-year warranty",
     "see_all_reviews": "See all reviews"
+  },
+  "not_for_sale": {
+    "sign_up": "Sign up to be the first to know when Kardia Band is available",
+    "let_me_know": "Let me know",
+    "email_address": "email address"
   }
 
 }
