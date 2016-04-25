@@ -3,7 +3,7 @@
 
   <a name="compatibility"></a>
   <div class="accordion" id="compatibility">
-    <h3>Compatibility
+    <h3>{{ 'product_tabs.compatibility' | t }}
       <a class="toggler">
         <i class="fa fa-angle-double-right"></i>
       </a>
@@ -15,7 +15,7 @@
 
   <a name="specs"></a>
   <div class="accordion" id="specs">
-    <h3>Tech Specs
+    <h3>{{ 'product_tabs.tech_specs' | t }}
       <a class="toggler">
         <i class="fa fa-angle-double-right"></i>
       </a>
@@ -27,7 +27,7 @@
 
   <a name="reviews"></a>
   <div class="accordion" id="reviews">
-    <h3>Reviews
+    <h3>{{ 'product_tabs.reviews' | t }}
       <a class="toggler">
         <i class="fa fa-angle-double-right"></i>
       </a>
@@ -55,10 +55,10 @@
     var hash = window.location.hash
     if (hash.length > 0) {
       var split = hash.split('#')
-        window.setTimeout(function() {
-          scrollToAnchor(split[1]);
-          $(hash).click();
-        }, 500);
+      window.setTimeout(function() {
+        scrollToAnchor(split[1]);
+        $(hash + ' h3').click();
+      }, 500);
     }
 
     //scroll to tabs when you click on this class

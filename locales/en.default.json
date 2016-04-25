@@ -336,5 +336,10 @@
     "app_store": "App Store",
     "google_play": "Google Play",
     "use_of_kardia_mobile_requires_html": "Use of Kardia Mobile requires the companion app Kardia, available for download in the {{itunes_url}} and {{play_url}}."
+  },
+  "product_tabs": {
+    "compatibility": "Compatibility",
+    "tech_specs": "Tech Specs",
+    "reviews": "Reviews"
   }
 }
