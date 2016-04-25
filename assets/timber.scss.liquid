@@ -2862,11 +2862,11 @@ Accordion Styles
 .accordion {
   background-color: $light-gray;
   position: relative;
-  padding: 8px 16px;
   margin-bottom: 16px;
   border-radius: 4px;
   cursor: pointer;
   & > h3 {
+    padding: 8px 16px;
     margin: 0;
     color: $blue-darker;
   }
@@ -2874,12 +2874,13 @@ Accordion Styles
     position: absolute;
     top: 8px;
     right: 20px;
-    font-size: 1.875em;
+    font-size: 1.4em;
     line-height: 1em;
     color: $blue-darker;
   }
   .accordion-inner {
     overflow: auto;
+    padding: 8px 16px;
     margin-top: 16px;
     &.hidden {
       display: none;

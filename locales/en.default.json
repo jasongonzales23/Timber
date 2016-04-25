@@ -22,6 +22,14 @@
       "title": "Search for products on our site",
       "placeholder": "Search our store",
       "submit": "Search"
+    },
+    "header": {
+      "not_in_the": "Not in the"
+    },
+    "fake_nav": {
+      "shop_kardia_mobile": "Shop Kardia Mobile",
+      "shop_kardia_band": "Shop Kardia Band",
+      "shop_kardia_accessories": "Shop Kardia Accessories"
     }
   },
   "blogs": {
@@ -256,7 +264,15 @@
     "footer": {
       "social_title": "Get Connected",
       "newsletter_title": "Newsletter",
-      "accepted_payments": "Accepted Payments"
+      "accepted_payments": "Accepted Payments",
+      "alivecor_is_available_in_the_following_countries": "AliveCor is available in the following countries",
+      "sign_up_for_the_latest_alivecor_news": "Sign up for the latest AliveCor news.",
+      "need_help": "Need help or have questions?",
+      "happy_to_help": "Our customer support team is happy to help.",
+      "email_us_at": "Email us at",
+      "all_rights_reserved": "All rights reserved AliveCor",
+      "limited_warranty_and_returns": "Limited Warranty and Returns Policy",
+      "keep_your_finger_on_the_pulse": "Keep your finger on the pulse."
     }
   },
   "products": {
