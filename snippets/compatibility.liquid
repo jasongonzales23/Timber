@@ -84,7 +84,7 @@
   </ul>
 
   {% comment %}
-    capture itunes and play urls for passing to the translatio
+    capture itunes and play urls for passing to the translation
   {% endcomment %}
   {% capture itunes_url %}
     <a href="https://itunes.apple.com/app/aliveecg/id579769143">
@@ -98,7 +98,7 @@
     </a>
   {% endcapture %}
 
-  <h3>Kardia App</h3>
+  <h3>{{ 'compatibility.kardia_app' | t }}</h3>
   <p class="h4">
   {{ 'compatibility.use_of_kardia_mobile_requires_html' | t: itunes_url: itunes_url, play_url: play_url }}
   </p>

@@ -335,11 +335,36 @@
     "android_4_x": "Android 4.x",
     "app_store": "App Store",
     "google_play": "Google Play",
-    "use_of_kardia_mobile_requires_html": "Use of Kardia Mobile requires the companion app Kardia, available for download in the {{itunes_url}} and {{play_url}}."
+    "use_of_kardia_mobile_requires_html": "Use of Kardia Mobile requires the companion app Kardia, available for download in the {{itunes_url}} and {{play_url}}.",
+    "kardia_app": "Kardia App"
   },
   "product_tabs": {
     "compatibility": "Compatibility",
     "tech_specs": "Tech Specs",
     "reviews": "Reviews"
+  },
+  "tech_specs": {
+    "dimensions": "Dimensions",
+    "product_dims": "8.2 cm x 3.2 cm x 0.35 cm",
+    "electrode_dims": "2 3cm x 3cm stainless-steel electrodes",
+    "weight": "Weight",
+    "product_weight": "18 grams",
+    "power": "Power",
+    "power_source": "3V CR2016 coin cell battery (included)",
+    "battery_life": "200 hours operational time",
+    "battery_life_typical": "12 months typical use",
+
+    "ekg_characteristics": "EKG Characteristics",
+    "single_lead": "Single Lead ECG",
+    "dynamic_range": "10 mV peak-to-peak input dynamic range",
+    "recording_length": "30 second to 5 minute recording duration",
+    "sample_rate": "300 samples per second sampling rate",
+    "bit_depth": "16 bit resolution",
+    "requirements": "Requirements",
+    "compatible_device": "Compatible Apple or Android device",
+    "kardia_app": "Kardia App",
+    "user_manuals": "User Manuals",
+    "ios_user_manual_link": "Kardia Mobile for iOS",
+    "android_user_manual_link": "Kardia Mobile for Android"
   }
 }
