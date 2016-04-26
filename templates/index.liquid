@@ -12,7 +12,7 @@
   'collections.main-product.products'
   and update the Kardia Mobile item to not have variants
 {% endcomment %}
-{% for product in collections.main-product.products %}
+{% for product in collections.test-product.products %}
   {% include 'main-product' %}
 
   {% comment %}
@@ -63,11 +63,11 @@
 
 </div>
 
-
 {% for product in collections.products-not-for-sale.products %}
-  {% include 'not-for-sale' %}
+  <div class="band section">
+    {% include 'not-for-sale' %}
+  </div>
 {% endfor %}
-
 
 <div class="grid-uniform">
   {% comment %}
