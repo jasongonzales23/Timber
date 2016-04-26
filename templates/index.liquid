@@ -6,9 +6,25 @@
   More info on global variables (available on all templates):
     - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
-{% for product in collections.main-product.products %}
+{% comment %}
+  TEMPORARY WORKAROUND TO GET PRODUCT SET UP CORRECTLY
+  WILL NEED TO SET THIS BACK TO:
+  'collections.main-product.products'
+  and update the Kardia Mobile item to not have variants
+{% endcomment %}
+{% for product in collections.test-product.products %}
   {% include 'main-product' %}
+  {% comment %}
+    Putting some accessories inline here to help users find them.
+  {% endcomment %}
+  {% include 'kardia-mobile-accessories' %}
+
+  {% comment %}
+    Product tab snippets will go in here
+  {% endcomment %}
+  {% include 'product-tabs' product=product%}
 {% endfor %}
+
 
 {% for product in collections.products-not-for-sale.products %}
   {% include 'not-for-sale' %}

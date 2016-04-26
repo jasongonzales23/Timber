@@ -2737,7 +2737,9 @@ label.error {
 
 #AddToCart {
   padding: 8px 96px;
-  margin-top: 48px;
+  @include at-query ($min, $medium) {
+    margin-top: 48px;
+  }
   #AddToCartText {
     font-size: em(24px);
   }
@@ -2993,4 +2995,9 @@ Accordion Styles
 
 #mail, #subscribe {
   max-width: 100%;
+}
+
+.accessory-line-item {
+  margin-left: -30px;
+  clear: both;
 }
