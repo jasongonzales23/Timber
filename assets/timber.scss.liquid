@@ -2406,6 +2406,9 @@ label.error {
   }
   img {
     width: 100%;
+    @include at-query($min, $large) {
+      width: 108px;
+    }
   }
 }
 
@@ -2419,7 +2422,7 @@ label.error {
     padding: 0 15px;
     border: none;
     @include at-query($min, $medium) {
-      padding: 30px 15px;
+      padding: 15px;
     }
   }
 }
@@ -2673,16 +2676,12 @@ label.error {
 
 .site-title {
   padding: 8px 0 0 0;
-  @include at-query($min, $medium) {
-    padding: 30px 0 0 0;
-  }
   h1 {
     margin: 0;
     line-height: 1em;
     font-size: 36px;
     @include at-query($min, $medium) {
       font-size: 48px;
-      margin: 0 0 0.5em;
       line-height: 1.4;
     }
     font-weight: 300;
