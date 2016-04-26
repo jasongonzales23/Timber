@@ -6,13 +6,8 @@
   More info on global variables (available on all templates):
     - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
-{% comment %}
-  TEMPORARY WORKAROUND TO GET PRODUCT SET UP CORRECTLY
-  WILL NEED TO SET THIS BACK TO:
-  'collections.main-product.products'
-  and update the Kardia Mobile item to not have variants
-{% endcomment %}
-{% for product in collections.test-product.products %}
+
+{% for product in collections.main-product.products %}
   {% include 'main-product' %}
 
   {% comment %}
