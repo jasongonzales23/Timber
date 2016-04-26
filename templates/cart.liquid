@@ -9,13 +9,16 @@
 
 {% if cart.item_count > 0 %}
 
-  <h1>{{ 'cart.general.title' | t }}</h1>
   <form action="/cart" method="post" novalidate class="cart table-wrap">
+    <h2>{{ 'cart.general.title' | t }}</h2>
+    <div class="checkout-button-container">
+      <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
+    </div>
     <table class="cart-table full table--responsive">
       <thead class="cart__row cart__header-labels">
-        <th colspan="2" class="text-center">{{ 'cart.label.product' | t }}</th>
-        <th class="text-center">{{ 'cart.label.price' | t }}</th>
-        <th class="text-center">{{ 'cart.label.quantity' | t }}</th>
+        <th colspan="2">{{ 'cart.label.product' | t }}</th>
+        <th>{{ 'cart.label.price' | t }}</th>
+        <th>{{ 'cart.label.quantity' | t }}</th>
         <th class="text-right">{{ 'cart.label.total' | t }}</th>
       </thead>
       <tbody>
@@ -33,7 +36,6 @@
                 {{ item.product.title }}
               </h4>
               {% unless item.variant.title contains 'Default' %}
-                <br>
                 <small>{{ item.variant.title }}</small>
               {% endunless %}
 
@@ -71,15 +73,15 @@
                 <small>{{ 'cart.general.remove' | t }}</small>
               </a>
             </td>
-            <td data-label="{{ 'cart.label.price' | t }}">
-              <span class="h3">
+            <td class="price-cell" data-label="{{ 'cart.label.price' | t }}">
+              <span class="h3 price">
                 {{ item.price | money }}
               </span>
             </td>
             <td data-label="{{ 'cart.label.quantity' | t }}">
               <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
             </td>
-            <td data-label="{{ 'cart.label.total' | t }}" class="text-right">
+            <td data-label="{{ 'cart.label.total' | t }}" class="total-cell">
               <span class="h3">
                 {{ item.line_price | money }}
               </span>

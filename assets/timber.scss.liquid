@@ -111,8 +111,8 @@ $colorBody: {{ settings.color_body_bg }};
 $colorBorder: {{ settings.color_borders }};
 
 // Nav and dropdown link background
-$colorNav: #f2f2f2;
-$colorNavText: #333;
+$colorNav: #6b6a6a;
+$colorNavText: #fff;
 
 // Site Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
@@ -1295,13 +1295,14 @@ th, td {
       content: attr(data-label);
       float: left;
       text-align: center;
-      font-size: 12px;
       padding-right: 10px;
     }
 
     &.cart-table {
       img {
         margin: 0 auto;
+        float: left;
+        clear: both;
       }
 
       .js-qty {
@@ -1321,15 +1322,6 @@ th, td {
     margin-top: 10px;
     padding-top: 15px;
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 15px;
-      right: 15px;
-      border-bottom: 1px solid $colorBorder;
-    }
   }
 }
 
@@ -1467,7 +1459,10 @@ input,
 textarea,
 select {
   border: 1px solid $colorBorder;
-  max-width: 100%;
+  max-width: 60%;
+  @include at-query($min, $medium) {
+    max-width: 100%;
+  }
   padding: 8px 10px;
   border-radius: $radius;
 
@@ -1920,6 +1915,7 @@ label.error {
   padding: $gutter / 2;
   white-space: nowrap;
   color: $colorNavText;
+  width: 100%;
 
   &:hover,
   &:active,
@@ -2405,6 +2401,15 @@ label.error {
   .js-qty {
     margin: 0 auto;
   }
+  h4 {
+    margin: 0;
+  }
+  img {
+    width: 100%;
+    @include at-query($min, $large) {
+      width: 108px;
+    }
+  }
 }
 
 .cart-table {
@@ -2414,8 +2419,11 @@ label.error {
 
   td,
   th {
-    padding: 30px 15px;
+    padding: 0 15px;
     border: none;
+    @include at-query($min, $medium) {
+      padding: 15px;
+    }
   }
 }
 
@@ -2667,19 +2675,22 @@ label.error {
 }
 
 .site-title {
-  padding: 30px 0 0 0;
+  padding: 8px 0 0 0;
   h1 {
+    margin: 0;
+    line-height: 1em;
     font-size: 36px;
     @include at-query($min, $medium) {
       font-size: 48px;
+      line-height: 1.4;
     }
     font-weight: 300;
     a {
       display: block;
       img {
         width: 95px;
-        @include at-query($min, $medium) {
-          width: 195px;
+        @include at-query($min, $large) {
+          width: 145px;
         }
         vertical-align: middle;
       }
@@ -2725,7 +2736,9 @@ label.error {
 
 #AddToCart {
   padding: 8px 96px;
-  margin-top: 48px;
+  @include at-query ($min, $medium) {
+    margin-top: 48px;
+  }
   #AddToCartText {
     font-size: em(24px);
   }
@@ -2768,6 +2781,9 @@ label.error {
 
 .section {
   margin-top: 24px;
+  &.band {
+    margin-top: 40px;
+  }
 }
 
 .accessory {
@@ -2850,11 +2866,11 @@ Accordion Styles
 .accordion {
   background-color: $light-gray;
   position: relative;
-  padding: 8px 16px;
   margin-bottom: 16px;
   border-radius: 4px;
   cursor: pointer;
   & > h3 {
+    padding: 8px 16px;
     margin: 0;
     color: $blue-darker;
   }
@@ -2862,12 +2878,13 @@ Accordion Styles
     position: absolute;
     top: 8px;
     right: 20px;
-    font-size: 1.875em;
+    font-size: 1.4em;
     line-height: 1em;
     color: $blue-darker;
   }
   .accordion-inner {
     overflow: auto;
+    padding: 8px 16px;
     margin-top: 16px;
     &.hidden {
       display: none;
@@ -2941,6 +2958,48 @@ Accordion Styles
   }
 }
 
+.cart {
+  h2 {
+    float: left;
+  }
+}
 
+.checkout-button-container {
+  padding: 0 0 15px 0;
+  float: right;
+  width: 100%;
+  @include at-query($min, $medium) {
+    width: auto;
+  }
+  input {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
+.price-cell {
+  margin-top: 15px;
+  .price {
+    white-space: nowrap;
+  }
+}
 
+.total-cell {
+  margin-top: 15px;
+  @include at-query($min, $medium) {
+    margin-top: 0;
+    text-align: right;
+  }
+  h3 {
+    white-space: nowrap;
+  }
+}
+
+#mail, #subscribe {
+  max-width: 100%;
+}
+
+.accessory-line-item {
+  margin-left: -30px;
+  clear: both;
+}

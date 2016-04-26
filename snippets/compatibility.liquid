@@ -1,24 +1,24 @@
 <div class="grid__item large--one-half">
-  <h3>Apple Compatibility</h3>
+  <h3>{{ 'compatibility.apple_compatibility' | t }}</h3>
   <div class="device-icon">
     <img src="{{ 'icon_iphone.png' | asset_url }}" alt=""/>
   </div>
   <ul class="compatibility-list">
     <li>
-      <b>iPhone 6 Plus / 6s Plus</b>
-      (iOS 9.2)
+      <b>{{ 'compatibility.iphone6_plus_6s_plus' | t }}</b>
+      ({{ 'compatibility.ios_9_2' | t }})
     </li>
     <li>
-      <b>iPhone 6 / 6s</b>
-      (iOS 9.2)
+      <b>{{ 'compatibility.iphone6_6s' | t }}</b>
+      ({{ 'compatibility.ios_9_2' | t }})
     </li>
     <li>
-      <b>iPhone 5 / 5s / 5c</b>
-      (iOS 9.2)
+      <b>{{ 'compatibility.iphone5_5s_5c' | t }}</b>
+      ({{ 'compatibility.ios_9_2' | t }})
     </li>
     <li>
-      <b>iPhone 4s</b>
-      (iOS 9.2)
+      <b>{{ 'compatibility.iphone4s' | t }}</b>
+      ({{ 'compatibility.ios_9_2' | t }})
     </li>
   </ul>
   <div class="device-icon">
@@ -26,8 +26,8 @@
   </div>
   <ul class="compatibility-list">
     <li>
-      <b>iPod Touch 5G</b>
-      (iOS 9.2)
+      <b>{{ 'compatibility.ipod_touch' | t }}</b>
+      ({{ 'compatibility.ios_9_2' | t }})
     </li>
   </ul>
   <div class="device-icon">
@@ -35,48 +35,72 @@
   </div>
   <ul class="compatibility-list">
     <li>
-      <b>iPad Air / Air 2</b>
-      (iOS 9.2)
+      <b>{{ 'compatibility.ipad_air_air2' | t }}</b>
+      ({{ 'compatibility.ios_9_2' | t }})
     </li>
     <li>
-      <b>iPad Mini</b>
-      (iOS 9.2)
+      <b>{{ 'compatibility.ipad_mini' | t }}</b>
+      ({{ 'compatibility.ios_9_2' | t }})
     </li>
   </ul>
-  <p>Last updated on Feb 17th, 2016</p>
+    {% assign updated_date = '1460790000' | date: format: 'month_day_year'  %}
+  <p>{{ 'compatibility.last_updated_on' | t: date: updated_date}}</p>
 </div>
 <div class="grid__item large--one-half">
-  <h3>Android Compatibility</h3>
-  <p class="h4">Tested for compatibility with the following Android devices:</p>
+  <h3>{{ 'compatibility.android_compatibility' | t }}</h3>
+  <p class="h4">{{ 'compatibility.tested_for_compatibility' | t }}</p>
   <div class="device-icon">
     <img src="{{ 'icon_android_phone.png' | asset_url }}" alt=""/>
   </div>
   <ul class="compatibility-list">
     <li>
-      <b>Samsung Note 3</b>
-      (Android 5.x)
+      <b>{{ 'compatibility.lg_nexus_5' | t }}</b>
+      ({{ 'compatibility.android_6_0_1' | t }})
     </li>
     <li>
-      <b>Galaxy S6 / S5 / S4</b>
-      (Android 5.x)
+      <b>{{ 'compatibility.samsung_note_5' | t }}</b>
+      ({{ 'compatibility.android_6_0_1' | t }})
     </li>
     <li>
-      <b>Galaxy S3</b>
-      (Android 4.x)
+      <b>{{ 'compatibility.samsung_note_3' | t }}</b>
+      ({{ 'compatibility.android_5_x' | t }})
     </li>
     <li>
-      <b>HTC One M7</b>
-      (Android 4.x)
+      <b>{{ 'compatibility.galaxy_s6_s5_s4' | t }}</b>
+      ({{ 'compatibility.android_5_x' | t }})
     </li>
     <li>
-      <b>Jitterbug Touch 3 / 2</b>
-      (Android 4.x)
+      <b>{{ 'compatibility.galaxy_s3' | t }}</b>
+      ({{ 'compatibility.android_4_x' | t }})
+    </li>
+    <li>
+      <b>{{ 'compatibility.htc_one_m7' | t }}</b>
+      ({{ 'compatibility.android_4_x' | t }})
+    </li>
+    <li>
+      <b>{{ 'compatibility.jitterbug_touch_3_2' | t }}</b>
+      ({{ 'compatibility.android_4_x' | t }})
     </li>
   </ul>
 
-  <h3>AliveECG App</h3>
+  {% comment %}
+    capture itunes and play urls for passing to the translation
+  {% endcomment %}
+  {% capture itunes_url %}
+    <a href="https://itunes.apple.com/app/aliveecg/id579769143">
+      {{ 'compatibility.app_store' | t }}
+    </a>
+  {% endcapture %}
+
+  {% capture play_url %}
+    <a href="https://play.google.com/store/apps/details?id=com.alivecor.aliveecg">
+      {{ 'compatibility.google_play' | t }}
+    </a>
+  {% endcapture %}
+
+  <h3>{{ 'compatibility.kardia_app' | t }}</h3>
   <p class="h4">
-  Use of AliveCor ECG requires the companion app AliveECG, available for download in the <a href="https://itunes.apple.com/app/aliveecg/id579769143">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.alivecor.aliveecg">Google Play</a>
+  {{ 'compatibility.use_of_kardia_mobile_requires_html' | t: itunes_url: itunes_url, play_url: play_url }}
   </p>
 
   <div class="app-store-badges">
