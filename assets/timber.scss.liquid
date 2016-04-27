@@ -77,14 +77,14 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
   #General Variables
 ==============================================================================*/
 
-// Timber Colors
-$colorPrimary: {{ settings.color_primary }};
-$colorSecondary: {{ settings.color_secondary }};
-
 //Alivecor Colors
 $blue: #00abe5;
 $blue-darker: #0072bc;
 $light-gray: #efefef;
+
+// Timber Colors
+$colorPrimary: $blue;
+$colorSecondary: #bbbbbb;
 
 // Button colors
 $colorBtnPrimary: $colorPrimary;
@@ -2406,6 +2406,9 @@ label.error {
   }
   img {
     width: 100%;
+    @include at-query($min, $large) {
+      width: 108px;
+    }
   }
 }
 
@@ -2419,7 +2422,7 @@ label.error {
     padding: 0 15px;
     border: none;
     @include at-query($min, $medium) {
-      padding: 30px 15px;
+      padding: 15px;
     }
   }
 }
@@ -2673,16 +2676,12 @@ label.error {
 
 .site-title {
   padding: 8px 0 0 0;
-  @include at-query($min, $medium) {
-    padding: 30px 0 0 0;
-  }
   h1 {
     margin: 0;
     line-height: 1em;
     font-size: 36px;
     @include at-query($min, $medium) {
       font-size: 48px;
-      margin: 0 0 0.5em;
       line-height: 1.4;
     }
     font-weight: 300;
@@ -2737,7 +2736,9 @@ label.error {
 
 #AddToCart {
   padding: 8px 96px;
-  margin-top: 48px;
+  @include at-query ($min, $medium) {
+    margin-top: 48px;
+  }
   #AddToCartText {
     font-size: em(24px);
   }
@@ -2780,6 +2781,9 @@ label.error {
 
 .section {
   margin-top: 24px;
+  &.band {
+    margin-top: 40px;
+  }
 }
 
 .accessory {
@@ -2993,4 +2997,9 @@ Accordion Styles
 
 #mail, #subscribe {
   max-width: 100%;
+}
+
+.accessory-line-item {
+  margin-left: -30px;
+  clear: both;
 }
