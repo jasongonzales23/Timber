@@ -6,12 +6,14 @@
   More info on global variables (available on all templates):
     - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
+
 {% for product in collections.main-product.products %}
   {% include 'main-product' %}
-{% endfor %}
 
-{% for product in collections.products-not-for-sale.products %}
-  {% include 'not-for-sale' %}
+  {% comment %}
+    Product tab snippets will go in here
+  {% endcomment %}
+  {% include 'product-tabs' product=product%}
 {% endfor %}
 
 {% comment %}
@@ -22,6 +24,7 @@
   <a name="accessories"></a>
   <h3>{{ 'homepage.sections.frontpage_title' | t }}</h3>
 </div>
+
 <div class="grid-uniform">
 
   {% comment %}
@@ -55,6 +58,11 @@
 
 </div>
 
+{% for product in collections.products-not-for-sale.products %}
+  <div class="band section">
+    {% include 'not-for-sale' %}
+  </div>
+{% endfor %}
 
 <div class="grid-uniform">
   {% comment %}

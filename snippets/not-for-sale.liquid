@@ -1,4 +1,3 @@
-<!-- /templates/product.liquid -->
 {% comment %}
 
   Rich snippets (itemscope, itemtype, etc.) for products are a theme requirement,
@@ -68,7 +67,7 @@
       <!-- lead capture form goes here --->
 
       <h3>
-        Sign up to be the first to know when Kardia Band is available
+        {{ 'not_for_sale.sign_up' | t }}
       </h3>
       {% if shop.address.country_upper == "UNITED STATES" %}
       {% assign actionUrl = "http://go.alivecor.com/l/149241/2016-03-15/3gyt" %}
@@ -81,9 +80,11 @@
         class="kardia-band-lead-capture"
         >
         <div class="input-group">
-          <input name="email" type="text" placeholder="email address">
+          <input name="email" type="text" placeholder="{{ 'not_for_sale.email_address' | t }}">
           <span class="input-group-btn">
-            <button class="orange" type="submit">Let me know!</button>
+            <button class="orange" type="submit">
+              {{ 'not_for_sale.let_me_know' | t }}!
+            </button>
           </span>
         </div>
         <div class="success-msg"></div>

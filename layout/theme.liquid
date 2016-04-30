@@ -103,7 +103,7 @@
                     {% endif %}
                   </span>
               </a>
-              <a href="#outside-us" class="outside-us">Not in the {{shop.address.country}}?</a>
+              <a href="#outside-us" class="outside-us">{{ 'general.header.not_in_the' | t }}{{shop.address.country}}?</a>
             </div>
 
             {% comment %}
@@ -135,7 +135,6 @@
       <div class="site-title">
         <h1 class="text-center">
           <a href="/">
-            <img src="{{ 'alivecor_studio_iwatch.png' || asset_url }}">
             {{ shop.name }}
           </a>
         </h1>
@@ -187,18 +186,18 @@
         </div>
         <div class="large--hide medium-down--show">
           <div class="grid">
-            <div class="grid__item one-half">
-              <div class="site-nav--mobile">
-                <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
-                  <span class="fallback-text">{{ 'layout.navigation.menu' | t }}</span>
-                </button>
-              </div>
-            </div>
-            <div class="grid__item one-half text-right">
+            <div class="text-right">
               <div class="site-nav--mobile">
                 <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
                   <span class="icon-fallback-text">
                     <span class="icon icon-cart" aria-hidden="true"></span>
+                    <span>
+                      {% if cart.item_count > 0 %}
+                        {{ cart.item_count }}
+                      {% else %}
+                        &nbsp;
+                      {% endif %}
+                    </span>
                     <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
                   </span>
                 </a>
@@ -214,21 +213,21 @@
         <nav class="fake-nav grid">
           <ul>
             <li class="grid__item medium--one-third large--one-third">
-              <a href="#kardia-mobile">
+              <a href="#kardia-mobile" class="scroll-to-tab">
                 <img src="{{ 'nav-k-mobile.jpg' | asset_url }}" alt="kardia mobile" class="small--left">
-                Shop Kardia Mobile
+                {{ 'general.fake_nav.shop_kardia_mobile' | t}}
               </a>
             </li>
             <li class="grid__item medium--one-third large--one-third">
-              <a href="#kardia-band">
+              <a href="#kardia-band" class="scroll-to-tab">
                 <img src="{{ 'nav-k-band.jpg' | asset_url }}" alt="kardia mobile" class="small--left">
-                Shop Kardia Band
+                {{ 'general.fake_nav.shop_kardia_band' | t}}
               </a>
             </li>
             <li class="grid__item medium--one-third large--one-third">
-              <a href="#accessories">
+              <a href="#accessories" class="scroll-to-tab">
                 <img src="{{ 'nav-k-accessories.jpg' | asset_url }}" alt="kardia mobile" class="small--left">
-                Shop Kardia Accessories
+                {{ 'general.fake_nav.shop_kardia_accessories' | t}}
               </a>
             </li>
           </ul>
@@ -247,13 +246,13 @@
 
           <div class="grid__item large--one-half international-links">
             <h4>Not in the {{shop.address.country}}?</h4>
-            <p>AliveCor is available in the following countries</p>
+            <p>{{ 'layout.footer.alivecor_is_available_in_the_following_countries' | t }}</p>
 
             <p class="other-store-list">
             </p>
 
-            <h5>Keep your finger on the pulse.</h5>
-            <p>Sign up for the latest AliveCor news.</p>
+            <h5>{{ 'layout.footer.keep_your_finger_on_the_pulse' | t }}</h5>
+            <p>{{ 'layout.footer.sign_up_for_the_latest_alivecor_news' | t }}</p>
             {% if settings.footer_newsletter_enable %}
               <div class="grid__item large--two-thirds medium--two-thirds small--one-whole newsletter-signup">
                 {% comment %}
@@ -280,17 +279,17 @@
           </div>
 
           <div class="grid__item large--one-half">
-            <h4>Need help or have questions?</h4>
-            <p>Our customer support team is happy to help.</p>
-            <p>Email us at <a href="mailto:support@alivecor.com">support@alivecor.com</a> </p>
+            <h4>{{ 'layout.footer.need_help' | t }}</h4>
+            <p>{{ 'layout.footer.happy_to_help' | t }}</p>
+            <p>{{ 'layout.footer.email_us_at' | t }} <a href="mailto:support@alivecor.com">support@alivecor.com</a></p>
           </div>
 
         </div>
       </div>
 
       <div class="wrapper disclaimer">
-        <span>All rights reserved AliveCor</span>
-        <a href="http://www.alivecor.com/warranty">Limited Warranty and Returns Policy</a>
+        <span>{{ 'layout.footer.all_rights_reserved' | t }}</span>
+        <a href="http://www.alivecor.com/warranty">{{ 'layout.footer.limited_warranty_and_returns' | t }}</a>
       </div>
 
     </footer>

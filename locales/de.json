@@ -6,7 +6,7 @@
     },
     "404": {
       "title": "404 Seite nicht gefunden",
-      "subtext_html": "Die von Ihnen angeforderte Seite existiert nicht. Klicken Sie <a href=\"/collections/all\">hier</a>, um den Einkauf fortzusetzen."
+      "subtext_html": "Die von Ihnen angeforderte Seite existiert nicht. Klicken Sie <a href=\"\">hier</a>, um den Einkauf fortzusetzen."
     },
     "breadcrumbs": {
       "home": "Startseite",
@@ -17,11 +17,19 @@
       "submit": "Abonnieren"
     },
     "search": {
-      "no_results_html": "Ihre Suche nach \"{{ terms }}\" hat keine Ergebnisse hervorgebracht.",
-      "results_for_html": "Ihre Suche nach \"{{ terms }}\" hat folgende Ergebnisse hervorgebracht:",
-      "title": "Suchen Sie auf unserer Seite nach Produkten",
+      "no_results_html": "Ihre Suche nach \"{{ terms }}\" hat keine Ergebnisse ergeben.",
+      "results_for_html": "Ihre Suche nach \"{{ terms }}\" hat folgende Ergebnisse ergeben:",
+      "title": "Suchen Sie auf unserer Seite nach Artikeln",
       "placeholder": "Durchsuchen Sie unseren Shop",
       "submit": "Suchen"
+    },
+    "header": {
+      "not_in_the": "Nicht in der/im"
+    },
+    "fake_nav": {
+      "shop_kardia_mobile": "Kardia Mobile kaufen",
+      "shop_kardia_band": "Kardia Band kaufen",
+      "shop_kardia_accessories": "Kardia-Zubehör kaufen"
     }
   },
   "blogs": {
@@ -39,7 +47,7 @@
       "email": "E-Mail",
       "message": "Nachricht",
       "post": "Kommentar posten",
-      "moderated": "Bitte beachten Sie, dass Kommentare vor der Veröffentlichung freigegeben werden müssen",
+      "moderated": "Bitte beachten Sie, dass Kommentare vor der Veröffentlichung freigegeben werden müssen.",
       "success_moderated": "Ihr Kommentar wurde erfolgreich gepostet. Da unser Blog moderiert wird, werden wir ihn erst kurze Zeit später veröffentlichen.",
       "success": "Ihr Kommentar wurde erfolgreich gepostet. Danke!",
       "comments_with_count": {
@@ -58,11 +66,11 @@
       "remove": "Entfernen",
       "note": "Besondere Hinweise an den Verkäufer",
       "subtotal": "Zwischensumme",
-      "shipping_at_checkout": "Liefer- und Preisnachlässe an der Kasse berechnet",
+      "shipping_at_checkout": "Versandkosten und Steuern an der Kasse berechnet",
       "update": "Einkaufswagen aktualisieren",
       "checkout": "Zur Kasse",
       "empty": "Ihr Einkaufswagen ist im Moment leer.",
-      "continue_browsing_html": "Mit der Suche <a href=\"/collections/all\">hier</a> fortfahren.",
+      "continue_browsing_html": "Jetzt einkaufen bei AliveCor",
       "close_cart": "Einkaufswagen schließen"
     },
     "label": {
@@ -75,7 +83,7 @@
   "collections": {
     "general": {
       "all_of_collection": "Alle {{ collection }}",
-      "no_matches": "Es tut uns leid, aber Ihre Suche nach Produkten hat keine Treffer ergeben.",
+      "no_matches": "Es tut uns leid, aber Ihre Suche nach Artikeln hat keine Treffer ergeben.",
       "link_title": "Durchsuchen Sie unsere {{ title }}-Zusammenstellung",
       "grid_view": "Gitteransicht",
       "list_view": "Listenansicht",
@@ -99,8 +107,8 @@
       "date_ascending": "Datum, alt nach neu"
     },
     "onboarding": {
-      "modal_title": "Auf dieser Seite werden alle Produkte Ihres Geschäfts angezeigt.",
-      "no_products_html": "Es sind noch keine Produkte vorhanden, doch sobald Sie welche hinzufügen, werden sie hier angezeigt, ganz gleich, ob sie zu einer Kollektion gehören oder nicht.",
+      "modal_title": "Auf dieser Seite werden alle Artikel Ihres Shops angezeigt.",
+      "no_products_html": "Es sind noch keine Artikel vorhanden, doch sobald Sie welche hinzufügen, werden sie hier angezeigt, ganz gleich, ob sie zu einer Kollektion gehören oder nicht.",
       "add_product": "Artikel hinzufügen"
     }
   },
@@ -195,8 +203,8 @@
       "email": "E-Mail",
       "submit": "Absenden",
       "cancel": "Abbrechen",
-      "subtext": "Wir werden Ihnen eine E-Mail zum Zurücksetzen des Passworts schicken.",
-      "success": "Wir haben Ihnen eine E-Mail mit einem Link zum Aktualisieren des Passworts geschickt."
+      "subtext": "Wir werden Ihnen eine E-Mail zum Zurücksetzen des Passworts zusenden.",
+      "success": "Wir haben Ihnen eine E-Mail mit einem Link zum Aktualisieren des Passworts zugesendet."
     },
     "reset_password": {
       "title": "Account-Passwort zurücksetzen",
@@ -217,17 +225,17 @@
   },
   "homepage": {
     "sections": {
-      "frontpage_title": "Startseite-Zusammenstellung",
+      "frontpage_title": "Zubehör",
       "featured_title": "Ausgewählte Zusammenstellungen",
       "news_title": "Neueste Nachrichten"
     },
     "onboarding": {
       "modal_title": "Fast fertig...",
-      "no_products_html": "Sie haben keine Artikel in Ihrer Startseiten-Zusammenstellung. Dieser Platzhalter verschwindet, wenn Sie <a href=\"/admin/collections?tutorial=Frontpage\">dieser Zusammenstellung einen Artikel hinzufügen</a>.",
-      "add_product": "Fügen Sie ein Produkt",
-      "product_title": "Beispielhafter Produkttitel",
+      "no_products_html": "Sie haben keine Artikel in Ihrer Startseiten-Zusammenstellung. Dieser Platzhalter wird entfernt, wenn Sie <a href=\"/admin/collections?tutorial=Frontpage\">dieser Zusammenstellung einen Artikel hinzufügen</a>.",
+      "add_product": "Fügen Sie einen Artikel hinzu",
+      "product_title": "Titel des Beispielartikels",
       "no_collections_html": "Sie haben hier keine Zusammenstellungen zum Anzeigen. <a href=\"/admin/custom_collections\">Fügen Sie ein paar Zusammenstellungen</a> zur Standard-Startseite hinzu.",
-      "add_collection": "Fügen Sie eine Sammlung",
+      "add_collection": "Fügen Sie eine Sammlung hinzu",
       "collection_title": "Beispielhafter Zusammenstellungstitel"
     }
   },
@@ -256,7 +264,15 @@
     "footer": {
       "social_title": "Bleiben Sie auf dem Laufenden",
       "newsletter_title": "Newsletter",
-      "accepted_payments": "Akzeptierte Zahlungen"
+      "accepted_payments": "Akzeptierte Zahlungen",
+      "alivecor_is_available_in_the_following_countries": "AliveCor ist in den folgenden Ländern erhältlich",
+      "sign_up_for_the_latest_alivecor_news": "Melden Sie sich an, um die aktuellen AliveCor-Neuigkeiten zu erhalten.",
+      "need_help": "Brauchen Sie Hilfe oder haben Sie Fragen?",
+      "happy_to_help": "Unser Kunden-Support-Team hilft Ihnen gerne.",
+      "email_us_at": "Schreiben Sie uns eine E-Mail unter",
+      "all_rights_reserved": "Alle Rechte vorbehalten AliveCor",
+      "limited_warranty_and_returns": "Eingeschränkte Gewährleistung und Rücksendevorschriften",
+      "keep_your_finger_on_the_pulse": "Halten Sie Ihre Finger auf dem Puls."
     }
   },
   "products": {
@@ -290,7 +306,77 @@
       "add_to_apple_wallet": "Hinzufügen zu Apple Wallet"
     }
   },
-  "date_formats":{
+  "date_formats": {
     "month_day_year": "%B %d, %Y"
+  },
+  "compatibility": {
+    "compatibility": "Kompatibilität",
+    "apple_compatibility": "Apple Kompatibilität",
+    "iphone6_plus_6s_plus": "iPhone 6 Plus / 6s Plus",
+    "iphone6_6s": "iPhone 6 / 6s",
+    "iphone5_5s_5c": "iPhone 5 / 5s / 5c",
+    "iphone4s": "iPhone 4s",
+    "ipod_touch": "iPod Touch 5G",
+    "ipad_air_air2": "iPad Air / Air 2",
+    "ipad_mini": "iPad Mini",
+    "ios_9_2": "iOS 9.2",
+    "last_updated_on": "Zuletzt aktualisiert am {{ date }}",
+    "android_compatibility": "Android Kompatibilität",
+    "tested_for_compatibility": "Auf Kompatibilität mit den folgenden Android-Geräten geprüft:",
+    "lg_nexus_5": "LG Nexus 5",
+    "samsung_note_5": "Samsung Note 5",
+    "samsung_note_3": "Samsung Note 3",
+    "galaxy_s6_s5_s4": "Galaxy S6 / S5 / S4",
+    "galaxy_s3": "Galaxy S3",
+    "htc_one_m7": "HTC One M7",
+    "jitterbug_touch_3_2": "Jitterbug Touch 3 / 2",
+    "android_6_0_1": "Android 6.0.1",
+    "android_5_x": "Android 5.x",
+    "android_4_x": "Android 4.x",
+    "app_store": "App Storr",
+    "google_play": "Google Play",
+    "use_of_kardia_mobile_requires_html": "Zur Verwendung des Kardia Mobile ist die Begleit-App Kardia erforderlich, die Sie im {{itunes_url}} und im {{play_url}} herunterladen können.",
+    "kardia_app": "Kardia App"
+  },
+  "product_tabs": {
+    "compatibility": "Kompatibilität",
+    "tech_specs": "Technische Daten",
+    "reviews": "Bewertungen"
+  },
+  "tech_specs": {
+    "dimensions": "Maße",
+    "product_dims": "8,2 cm x 3,2 cm x 0,35 cm",
+    "electrode_dims": "2 3 x 3 cm-Elektroden aus rostfreiem Stahl",
+    "weight": "Gewicht",
+    "product_weight": "3 Ueff",
+    "power": "Leistung",
+    "power_source": "3V CR2016 Knopfzellenbatterien (beiliegend)",
+    "battery_life": "200 Stunden Betriebsdauer",
+    "battery_life_typical": "Normale Nutzung 12 Monate",
+    "ekg_characteristics": "EKG-Eigenschaften",
+    "single_lead": "Einzelableitungs-EKG",
+    "dynamic_range": "10 mV-Spitze-Spitze-Eingangsdynamikbereich",
+    "recording_length": "Aufzeichnungsdauer 30 Sekunden bis 5 Minuten",
+    "sample_rate": "Abtastrate 300 Signale pro Sekunde",
+    "bit_depth": "Auflösung 16 Bit",
+    "requirements": "Anforderungen",
+    "compatible_device": "Kompatibel mit Apple- und Android-Geräten",
+    "kardia_app": "Kardia App",
+    "user_manuals": "Benutzerhandbücher",
+    "ios_user_manual_link": "Kardia Mobile für iOS",
+    "android_user_manual_link": "Kardia Mobile für Android"
+  },
+  "main_product": {
+    "guarantee": "14-tägige Geld-Zurück-Garantie",
+    "warranty": "1 Jahr Gewährleistung",
+    "see_all_reviews": "Alle Bewertungen anzeigen"
+  },
+  "not_for_sale": {
+    "sign_up": "Melden Sie sich an und erfahren Sie als Erste/r, wenn Kardia Band erhältlich ist.",
+    "let_me_know": "Ich möchte mehr erfahren",
+    "email_address": "E-Mail-Adresss"
+  },
+  "recommended_accessories": {
+    "recommended_accessories": "Empfohlenes Zubehör"
   }
 }
